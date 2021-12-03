@@ -43,6 +43,7 @@ This data set contains data for the video statistics. It can be useful to get de
 ```{r Dataset2, echo=FALSE}
 colnames(video_stats)
 ```
+The quiz taken by the registered students is the subject of this data collection. The data can be used to examine the performance of the students taking the course, and the feedback collected can be used to improve the process.
 
 ```{r Dataset3, echo=FALSE}
 head(ques_resp)
@@ -61,6 +62,7 @@ gender_plot
 From the graph we can observe that the number of "Males students" enrolled in the course are comparatively more than the "females".
 
 #### Plot - Country
+
 The country plot helps in understanding the demographics of the audience. 
 From the bar plot of the count vs countries we can observe that most number of participants have been from GB (Great Britain).
 
@@ -75,7 +77,7 @@ The map helps us to identify the areas of no coverage. We can see that places fr
 For identifying various age groups and their respective frequency of engagement with the course we can best customize the course curriculum and teaching methods so as to make better and more interactive course for all the respective age groups.
 From the plot we can also analyze the trends among various age groups.
 
-```{r}
+```{r echo=FALSE}
 enrol_age
 ```
 Plot shows us that the highest number of enrollments have been from youth which are from the age group of 26 - 35. This age group is mostly out of college &  typically requires a lot of skill development for filling up proper job skills. Males (15.7%) are the highest enrollments for this age group which may imply greater need of skill development because of much more competition.
@@ -85,7 +87,7 @@ However, it is exciting to see middle age ranging from 36-45 (9.8%) & 46-55 (9.9
 #### Education level/ Employment plot 
 The data is useful in understanding the job status and curate the curriculum in a way to up skill the learners. 
 
-```{r}
+```{r echo=FALSE}
 employment_plot
 ```
 From the above plot we can observe that the full time working population have been the most attracted to this course which intern suggests high demand for skill improvement in professional environment.
@@ -99,60 +101,66 @@ They can obtain new & desired professional skills while being employed full time
 
 #### Box Plot - Videowatch time
 
-```{r}
-box_plot
-```
-The above boxplot represents the statistical summary for the video watch time for students in North America. 
+The below boxplot represents the statistical summary for the video watch time for students in North America. 
 from above graph we can infer that the median is about 11.43, mean about 11.45. The above statistics can also be obtained via `summary` function like below. 
 
+```{r echo=FALSE}
+box_plot
+```
+
 North America views percentage summary
-```{r}
+```{r echo=FALSE}
 summary(video_stats$north_america_views_percentage)
 ```
 Asia views percentage summary
-```{r}
+```{r echo=FALSE}
 summary(video_stats$asia_views_percentage)
 ```
 Europe views percentage summary
-```{r}
+```{r echo=FALSE}
 summary(video_stats$europe_views_percentage)
 ```
 Oceania view percentage summary
-```{r}
+```{r echo=FALSE}
 summary(video_stats$oceania_views_percentage)
 ```
 The boxplot presents the statistical five number summary information visually and is a better alternative to quickly identify the mean value and dispersion in data, through above summary we can observe precise numerical values of each of the statistical perimeters used in box plot for the respective countries.
 We can observe that europe has the highest view percentage out of all the options in our data set. Indicating the course strength in the eyes of European population.
 
-#### Scatter plot - Transcript against country
+#### Scatter plot
 
-```{r}
+The plot is a transcript views vs asian view percentage graph with respect to step position fill.
+
+```{r echo=FALSE}
 asia_transcript
 ```
 Non native-english speakers has higher usage of transcripts, as evident from graph, with increase in views, there is increase in the usage of transcript 
 
-```{r}
+```{r echo=FALSE}
 view_download
 ```
 The above graph is a scatter of plot for north America view % to step position with respect to total downloads. The graph can be used to understand at what position, the learner considered downloading. 
 Here, we could see the most downloads are at the start therefore representing that learners often downloaded the videos to view later as per their convenience. 
 
 
-```{r}
+```{r echo=FALSE}
 asia_hd
 ```
-As the number of people started watching videos, the number of viewers watching in HD increased, giving a linear relationship 
+From the graph we can observe that number of people watching in high definition are very low in numbers.
+
+```{r echo=FALSE}
+decline_view
+```
+From the above plot we can infer that number of views are declined as the viewers move forward in the course, with 1st video watched as the most number of times and the last videos from chapter 3 watched least number of times. This indicates a decline in interest experienced by the students.
 
 
-```{r}
-high_views = max(video_stats$total_views) # calculating the highest views seen 
+```{r echo=FALSE}
 high_views 
 ```
 The maximum number of people watched 
 
 
-```{r}
-low_views = min(video_stats$total_views) # calculating lowest viewership 
+```{r echo=FALSE}
 low_views
 ```
 The minimum number of people watched 

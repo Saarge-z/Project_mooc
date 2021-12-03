@@ -108,6 +108,11 @@ asia_hd = ggplot(data = video_stats, aes(x = asia_views_percentage, y = viewed_h
   geom_point(aes(colour = factor(step_position), size = 2)) # scatter plot to visualize views in HD with respect to asia
 asia_hd
 
+# Visualizing on x-axis = total transcript views & y-axis = asia view % filled in by step position
+decline_view = ggplot(data = video_stats, aes(x = step_position, y = total_views)) + 
+  geom_point(aes(colour = factor(video_duration), size = 2)) # scatter plot to visualize total downloads 
+decline_view
+
 # Finding the highest views seen 
 high_views = max(video_stats$total_views)
 high_views 
@@ -142,7 +147,7 @@ count_true
 count_false = length(which(ques_resp$correct == "false"))
 count_false
 
-# Finding total reponse
+# Finding total response
 total_resp = length(ques_resp$correct)
 total_resp
 
