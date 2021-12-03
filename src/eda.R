@@ -65,7 +65,7 @@ edu_level = as.factor(df_clean$highest_education_level)
 summary(edu_level)
 
 
-#plot(as.factor(df_clean$highest_education_level))
+# plot(as.factor(df_clean$highest_education_level))
 employment_plot = ggplot(df_clean, aes(x = factor(highest_education_level))) + 
   geom_bar(stat = "count", width = 0.7, fill = "steelblue") + theme_minimal() + 
   scale_x_discrete(guide = guide_axis(n.dodge = 2))

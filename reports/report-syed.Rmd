@@ -38,8 +38,10 @@ Below is the overview of the enrollment data.
 head(df_clean)
 ```
 
+This data set contains data for the video statistics. It can be useful to get deep insight on how the enrolled students are utilizing the online courses.
+
 ```{r Dataset2, echo=FALSE}
-head(video_stats)
+colnames(video_stats)
 ```
 
 ```{r Dataset3, echo=FALSE}
@@ -80,11 +82,77 @@ Plot shows us that the highest number of enrollments have been from youth which 
 However, it is exciting to see middle age ranging from 36-45 (9.8%) & 46-55 (9.9%) in significant numbers with male to female ratio (1.3% & 1.2% for respective age ranges) relatively same as compared to age range 26-35(1.5).
 
 
-## Employment Plot 
-The employment data is useful in understanding the job status and curate the curriculum in a way to upskill the learners. 
+#### Education level/ Employment plot 
+The data is useful in understanding the job status and curate the curriculum in a way to up skill the learners. 
+
 ```{r}
 employment_plot
 ```
-From above, we can infer that, the full time working have been attracted to online education at most. 
-It is legit in a way that, they can obtain new desire professional skills while being employed full time, as it helps to fund their education. 
+From the above plot we can observe that the full time working population have been the most attracted to this course which intern suggests high demand for skill improvement in professional environment.
+They can obtain new & desired professional skills while being employed full time, as it helps to fund their education thereby maximizing their results.
 
+
+
+
+## Dataset 2
+
+
+#### Box Plot - Videowatch time
+
+```{r}
+box_plot
+```
+The above boxplot represents the statistical summary for the video watch time for students in North America. 
+from above graph we can infer that the median is about 11.43, mean about 11.45. The above statistics can also be obtained via `summary` function like below. 
+
+North America views percentage summary
+```{r}
+summary(video_stats$north_america_views_percentage)
+```
+Asia views percentage summary
+```{r}
+summary(video_stats$asia_views_percentage)
+```
+Europe views percentage summary
+```{r}
+summary(video_stats$europe_views_percentage)
+```
+Oceania view percentage summary
+```{r}
+summary(video_stats$oceania_views_percentage)
+```
+The boxplot presents the statistical five number summary information visually and is a better alternative to quickly identify the mean value and dispersion in data, through above summary we can observe precise numerical values of each of the statistical perimeters used in box plot for the respective countries.
+We can observe that europe has the highest view percentage out of all the options in our data set. Indicating the course strength in the eyes of European population.
+
+#### Scatter plot - Transcript against country
+
+```{r}
+asia_transcript
+```
+Non native-english speakers has higher usage of transcripts, as evident from graph, with increase in views, there is increase in the usage of transcript 
+
+```{r}
+view_download
+```
+The above graph is a scatter of plot for north America view % to step position with respect to total downloads. The graph can be used to understand at what position, the learner considered downloading. 
+Here, we could see the most downloads are at the start therefore representing that learners often downloaded the videos to view later as per their convenience. 
+
+
+```{r}
+asia_hd
+```
+As the number of people started watching videos, the number of viewers watching in HD increased, giving a linear relationship 
+
+
+```{r}
+high_views = max(video_stats$total_views) # calculating the highest views seen 
+high_views 
+```
+The maximum number of people watched 
+
+
+```{r}
+low_views = min(video_stats$total_views) # calculating lowest viewership 
+low_views
+```
+The minimum number of people watched 
