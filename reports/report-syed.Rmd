@@ -1,24 +1,31 @@
 ---
-title: "CSC 8631 - EDA Report"
-author: "Syed Mohib Raza"
-date: "11/25/2021"
 output: pdf_document
+title: "CSC 8631 - EDA Report"
+author: "Syed Mohib Raza || Student ID: 200740241"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 knitr::opts_knit$set(root.dir = normalizePath('..'))
 ```
-```{r Initialisation}
+```{r include=FALSE}
 library(ProjectTemplate)
 load.project()
 
 # Run data analysis script
 source("src/eda.R")
 ```
-## R Markdown
+## Abstract
 
-With the advent of the internet, online education adoption has been a much debatable area but nevertheless, it has been rising. The world is now more connected than ever and online education is enabling thousands of individuals who aspire to study world-class education and all that at the comfort of their homes with flexible times. Thus virtually removing the barriers of unaccessible education and promoting free and fair resource sharing.
+This document provides an analysis of massive open online certificate (MOOC) learning data through Newcastle University. And along with it shows the benefits of reproducible data science using r markdown. The data set contains 52 .csv files, of which three files have been used for performing analysis. The analysis performed is a freehand analysis of the data set with the liberty to generate our own questions and find their answers.
+
+*keywords*: MOOC data set, Data Analysis, reproduciblity
+
+## Introduction
+
+With the advent of the internet, online education adoption has been a much debatable area but nevertheless, it has been rising. The world is now more connected than ever and online education is enabling thousands of individuals who aspire to study world-class education and all that at the comfort of their homes with flexible times. Thus virtually removing the barriers of inaccessible education and promoting free and fair resource sharing.
 
 Due to the unfortunate impact of the covid-19 pandemic in 2020, there has been a significant increase in the use of online education platforms also called massive open online certificates or MOOCs.
 
@@ -33,7 +40,7 @@ enrol_age
 You can also embed plots, for example:
 
 ```{r pressure, echo=FALSE}
-plot(pressure)
+country_map
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

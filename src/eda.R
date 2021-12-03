@@ -16,6 +16,21 @@ country_plot = ggplot(df_clean, aes(x = factor(country))) +
 country_plot
 
 
+world <- ne_countries(scale = "medium", returnclass = "sf")
+
+my_countries <- c(unique(df_clean$detected_country))
+
+world_modified <- world %>% 
+  mutate(my_selection = ifelse(postal %in% my_countries,
+                               1, NA))
+
+country_map = ggplot(data = world_modified) +
+  ggtitle("World map") +
+  geom_sf(aes(fill=my_selection)) +
+  theme_bw()
+country_map
+
+
 # Identifying most number of enrollments based on age groups
 # plot(as.factor(df_clean$age_range))
 enrol_age = ggplot(data = df_clean, aes(x = factor(age_range), 
@@ -125,10 +140,10 @@ count_false
 total_resp = length(ques_resp$correct)
 total_resp
 
-true_percent = (count_true / total_response) * 100 
+true_percent = (count_true / total_resp) * 100 
 true_percent
 
 round(true_percent)
 
-false_percent = (count_false / total_response) * 100
+false_percent = (count_false / total_resp) * 100
 false_percent
