@@ -62,10 +62,11 @@ gender_plot
 ```
 From the graph we can observe that the number of "Males students" enrolled in the course are comparatively more than the "females".
 \newpage
+
 #### Plot - Country \
 
 The country plot helps in understanding the demographics of the audience. 
-From the bar plot of the count vs countries we can observe that most number of participants have been from GB (Great Britain).
+From the bar plot of the count vs countries we can observe that most number of participants have been from GB (Great Britain - 445 count).
 
 ```{r echo=FALSE}
 country_plot
@@ -73,6 +74,7 @@ country_map
 ```
 The map helps us to identify the areas of no coverage. We can see that places from Africa, Middle east & south east countries just above Australia, have little to no engagement with the course moreover surprisingly India with its rich population has zero number of students that have taken this course.
 \newpage
+
 #### Plot - Age range vs gender \
 
 For identifying various age groups and their respective frequency of engagement with the course we can best customize the course curriculum and teaching methods so as to make better and more interactive course for all the respective age groups.
@@ -85,7 +87,8 @@ Plot shows us that the highest number of enrollments have been from youth which 
 However, it is exciting to see middle age ranging from 36-45 (9.8%) & 46-55 (9.9%) in significant numbers with male to female ratio (1.3% & 1.2% for respective age ranges) relatively same as compared to age range 26-35(1.5).
 
 \newpage
-#### Education level/ Employment plot  \
+
+#### Employment plot  \
 
 The data is useful in understanding the job status and curate the curriculum in a way to up skill the learners. 
 

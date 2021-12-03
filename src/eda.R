@@ -43,7 +43,7 @@ enrol_age = ggplot(data = df_clean, aes(x = factor(age_range),
             vjust = -0.5, 
             size = 2.5) + 
   scale_y_continuous(labels = scales::percent) + 
-  labs(x = 'Age Range', y = 'Percentage', fill = 'gear')
+  labs(x = 'Age Range', y = 'Percentage', fill = 'gender')
 enrol_age
 
 
