@@ -18,7 +18,7 @@ country_plot
 
 world <- ne_countries(scale = "medium", returnclass = "sf")
 
-my_countries <- c(unique(df_clean$detected_country))
+my_countries <- c(unique(df_clean$country))
 
 world_modified <- world %>% 
   mutate(my_selection = ifelse(postal %in% my_countries,
@@ -93,23 +93,27 @@ box_plot
 summary(video_stats$north_america_views_percentage)
 
 
-# Visualizing total downloads 
+# Visualizing total downloads with x-axis = step position & y-axis = North america view % 
 view_download = ggplot(data = video_stats, aes(y = north_america_views_percentage, x = step_position)) + 
   geom_point(aes(colour = factor(total_downloads), size = 2))
 view_download
 
-asia_transcript = ggplot(data = video_stats, aes(x = asia_views_percentage, y = total_transcript_views)) + 
+# Visualizing on x-axis = total transcript views & y-axis = asia view % filled in by step position
+asia_transcript = ggplot(data = video_stats, aes(x = total_transcript_views, y = asia_views_percentage)) + 
   geom_point(aes(colour = factor(step_position), size = 2)) # scatter plot to visualize total downloads 
 asia_transcript
 
+# Visualizing step position with x-axis = hd views & y-axis = asia view % 
 asia_hd = ggplot(data = video_stats, aes(x = asia_views_percentage, y = viewed_hd)) + 
   geom_point(aes(colour = factor(step_position), size = 2)) # scatter plot to visualize views in HD with respect to asia
 asia_hd
 
-high_views = max(video_stats$total_views) # calculating the highest views seen 
+# Finding the highest views seen 
+high_views = max(video_stats$total_views)
 high_views 
 
-low_views = min(video_stats$total_views) # calculating lowest viewership 
+# Finding the lowest viewership 
+low_views = min(video_stats$total_views)
 low_views
 
 
@@ -118,11 +122,11 @@ low_views
 
 
 
-
+# Display few rows of the data set and summarize it
 head(ques_resp)
 summary(ques_resp)
 
-
+# Plot the count for correct and incorrect response
 correct_plot = ggplot(ques_resp, aes(x = factor(correct))) + 
   geom_bar(stat = "count", width = 0.7, fill = "steelblue") + theme_minimal() 
 correct_plot
@@ -130,20 +134,23 @@ correct_plot
 
 table(ques_resp$correct)
 
-
+# Finding number of true responses
 count_true = length(which(ques_resp$correct == "true"))
 count_true
 
+# Finding number of false responses
 count_false = length(which(ques_resp$correct == "false"))
 count_false
 
+# Finding total reponse
 total_resp = length(ques_resp$correct)
 total_resp
 
+# Calculating the % of true responses
 true_percent = (count_true / total_resp) * 100 
 true_percent
 
-round(true_percent)
-
+# Calculating the % of fals responses
 false_percent = (count_false / total_resp) * 100
 false_percent
+
