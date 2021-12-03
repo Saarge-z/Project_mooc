@@ -48,11 +48,12 @@ The quiz taken by the registered students is the subject of this data collection
 ```{r Dataset3, echo=FALSE}
 head(ques_resp)
 ```
+\newpage
 
 ## Data Set 1
 
 
-#### Plot - Gender
+#### Plot - Gender \
 
 In the below plot we are identifying the enrollments based on the gender.
 
@@ -60,8 +61,8 @@ In the below plot we are identifying the enrollments based on the gender.
 gender_plot
 ```
 From the graph we can observe that the number of "Males students" enrolled in the course are comparatively more than the "females".
-
-#### Plot - Country
+\newpage
+#### Plot - Country \
 
 The country plot helps in understanding the demographics of the audience. 
 From the bar plot of the count vs countries we can observe that most number of participants have been from GB (Great Britain).
@@ -71,8 +72,8 @@ country_plot
 country_map
 ```
 The map helps us to identify the areas of no coverage. We can see that places from Africa, Middle east & south east countries just above Australia, have little to no engagement with the course moreover surprisingly India with its rich population has zero number of students that have taken this course.
-
-#### Plot - Age range vs gender
+\newpage
+#### Plot - Age range vs gender \
 
 For identifying various age groups and their respective frequency of engagement with the course we can best customize the course curriculum and teaching methods so as to make better and more interactive course for all the respective age groups.
 From the plot we can also analyze the trends among various age groups.
@@ -83,8 +84,9 @@ enrol_age
 Plot shows us that the highest number of enrollments have been from youth which are from the age group of 26 - 35. This age group is mostly out of college &  typically requires a lot of skill development for filling up proper job skills. Males (15.7%) are the highest enrollments for this age group which may imply greater need of skill development because of much more competition.
 However, it is exciting to see middle age ranging from 36-45 (9.8%) & 46-55 (9.9%) in significant numbers with male to female ratio (1.3% & 1.2% for respective age ranges) relatively same as compared to age range 26-35(1.5).
 
+\newpage
+#### Education level/ Employment plot  \
 
-#### Education level/ Employment plot 
 The data is useful in understanding the job status and curate the curriculum in a way to up skill the learners. 
 
 ```{r echo=FALSE}
@@ -95,11 +97,11 @@ They can obtain new & desired professional skills while being employed full time
 
 
 
-
+\newpage
 ## Dataset 2
 
 
-#### Box Plot - Videowatch time
+#### Box Plot - Videowatch time \
 
 The below boxplot represents the statistical summary for the video watch time for students in North America. 
 from above graph we can infer that the median is about 11.43, mean about 11.45. The above statistics can also be obtained via `summary` function like below. 
@@ -127,7 +129,7 @@ summary(video_stats$oceania_views_percentage)
 The boxplot presents the statistical five number summary information visually and is a better alternative to quickly identify the mean value and dispersion in data, through above summary we can observe precise numerical values of each of the statistical perimeters used in box plot for the respective countries.
 We can observe that europe has the highest view percentage out of all the options in our data set. Indicating the course strength in the eyes of European population.
 
-#### Scatter plot
+#### Scatter plot \
 
 The plot is a transcript views vs asian view percentage graph with respect to step position fill.
 
@@ -164,3 +166,55 @@ The maximum number of people watched
 low_views
 ```
 The minimum number of people watched 
+
+
+## Dataset 3
+
+```{r echo=FALSE}
+correct_plot
+```
+Visualizing the overall scores by a bar graph. 
+
+```{r echo=FALSE}
+table(ques_resp$correct)
+```
+Obtaining the numbers for each category 
+
+```{r echo=FALSE}
+count_true
+```
+Count of learners who scored "Correct" is 5739
+
+```{r echo=FALSE}
+count_false
+```
+Count of learners who scored "Incorrect" is 4338
+
+
+```{r echo=FALSE}
+total_resp
+```
+
+
+```{r echo=FALSE}
+true_percent
+```
+The percentage of people who scored "correct", I have rounded the decimals. 
+
+
+```{r echo=FALSE}
+false_percent
+```
+The percentage of people who scored "incorrect"
+
+
+
+I look forward to discussing this report in the Presentation.
+
+
+## Notes: 
+
+From a large Data set, a single data set is collected from each category i.e 
+1) Enrollment Data Set 
+2) Video Stats Data Set 
+3) Question Response Data Set 
