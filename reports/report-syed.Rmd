@@ -30,16 +30,16 @@ Due to the unfortunate impact of the covid-19 pandemic in 2020, there has been a
 
 ## Data Exploration and Preparation
 
-The first data set comprises of enrollment information, had several unknown values and had to be cleaned to generate a clean sample. All the data uses ETS that is Extract, Transform and Load to perform EDA. Enrollment data set has 13 columns listed below.
+The first data set comprised of enrollment information and had several unknown values and had to be cleaned to generate a clean sample. All the data uses ETS that is Extract, Transform and Load to perform EDA. The enrollment data set has 13 columns listed below.
 
 ```{r echo=FALSE}
 head(enrol)
 ```
 
-The second data set contains data for the video statistics. It can be useful to get deep insight on how the enrolled students are utilizing the online courses.
+The second data set contains data for the video statistics. It can be useful to get deep insight into how the enrolled students are utilizing the online courses.
 Details below are about some of the columns used in the analysis.
 
-1. step_position - Course is divided into 3 main sections and each of them has some sub sections, these divisions are called as step position.
+1. step_position - Course is divided into 3 main sections and each of them has some sub-sections, these divisions are called step position.
 2. total_transcript_views - Total number of students that used transcripts to understand the course.
 3. total_downloads - Total videos downloaded by the students.
 4. north_america_view_percentage - Percentage of students that are from North America.
@@ -64,20 +64,20 @@ In the below plot we are identifying the enrollments based on the gender.
 ```{r echo=FALSE}
 gender_plot
 ```
-From the graph we can observe that the number of "Males students" enrolled in the course are comparatively more than the "females".
+From the graph, we can observe that the number of "Males students" enrolled in the course are comparatively more than the "females".
 
 \newpage
 
 #### Plot - Country \
 
 The country plot helps in understanding the demographics of the audience. 
-From the bar plot of the count vs countries we can observe that most number of participants have been from GB (Great Britain - 445 count).
+From the bar plot of the count vs countries, we can observe that most numbers of participants have been from GB (Great Britain - 445 counts).
 
 ```{r echo=FALSE}
 country_plot
 country_map
 ```
-The map helps us to identify the areas of no coverage. We can see that places from Africa, Middle east & south east countries just above Australia, have little to no engagement with the course moreover surprisingly India with its rich population has zero number of students that have taken this course.
+The map helps us to identify the areas of no coverage. We can see that places from Africa, Middle east & southeast countries just above Australia, have little to no engagement with the course moreover surprisingly India with its rich population has zero number of students that have taken this course.
 \newpage
 
 #### Plot - Age range vs gender \
@@ -88,19 +88,19 @@ From the plot we can also analyze the trends among various age groups.
 ```{r echo=FALSE}
 enrol_age
 ```
-Plot shows us that the highest number of enrollments have been from youth which are from the age group of 26 - 35. This age group is mostly out of college &  typically requires a lot of skill development for filling up proper job skills. Males (15.7%) are the highest enrollments for this age group which may imply greater need of skill development because of much more competition.
+The plot shows us that the highest number of enrollments have been from youth who are from the age group of 26 - 35. This age group is mostly out of college &  typically requires a lot of skill development for filling up proper job skills. Males (15.7%) are the highest enrollments for this age group which may imply a greater need for skill development because of much more competition.
 However, it is exciting to see middle age ranging from 36-45 (9.8%) & 46-55 (9.9%) in significant numbers with male to female ratio (1.3% & 1.2% for respective age ranges) relatively same as compared to age range 26-35(1.5%).
 
 \newpage
 
 #### Employment plot  \
 
-The data is useful in understanding the job status and curate the curriculum in a way to up skill the learners. 
+The data is useful in understanding the job status and curating the curriculum in a way to up-skill the learners. 
 
 ```{r echo=FALSE}
 employment_plot
 ```
-From the above plot we can observe that the full time working population have been the most attracted to this course which intern suggests high demand for skill improvement in professional environment.
+From the above plot, we can observe that the full-time working population has been the most attracted to this course which intern suggests high demand for skill improvement in a professional environment.
 They can obtain new & desired professional skills while being employed full time, as it helps to fund their education thereby maximizing their results.
 
 
@@ -119,7 +119,7 @@ The plot indicates that the students with the University degree have the highest
 #### Box Plot - Videowatch time \
 
 The below box plot represents the statistical summary for the video watch time for students in North America. 
-from above graph we can infer that the median is about 11.43, mean about 11.45. The above statistics can also be obtained via `summary` function like below. 
+from the above graph, we can infer that the median is about 11.43, mean is about 11.45. The above statistics can also be obtained via the `summary` function like below.
 
 ```{r echo=FALSE}
 box_plot
@@ -145,8 +145,8 @@ Oceania view percentage summary
 summary(video_stats$oceania_views_percentage)
 ```
 
-The boxplot presents the statistical five number summary information visually and is a better alternative to quickly identify the mean value and dispersion in data, through above summary we can observe precise numerical values of each of the statistical perimeters used in box plot for the respective countries.
-We can observe that europe has the highest view percentage out of all the options in our data set. Indicating the course strength in the eyes of European population.
+The boxplot presents the statistical five-number summary information visually and is a better alternative to quickly identify the mean value and dispersion in data, through the above summary we can observe precise numerical values of each of the statistical parameters used in the box plot for the respective countries.
+We can observe that Europe has the highest view percentage out of all the options in our data set. Indicating the course strength in the eyes of the European population.
 
 #### Scatter plot \
 
@@ -156,27 +156,27 @@ The plot is a transcript views vs asian view percentage graph with respect to st
 asia_transcript
 ```
 
-Non native-english speakers has higher usage of transcripts, as evident from graph, with increase in views, there is increase in the usage of transcript 
+Non-native-English speakers have a higher usage of transcripts, as evident from the graph, with an increase in views, there is an increase in the usage of transcript.
 
 ```{r echo=FALSE}
 view_download
 ```
 
-The above graph is a scatter of plot for north America view % to step position with respect to total downloads. The graph can be used to understand at what position, the learner considered downloading. 
-Here, we could see the most downloads are at the start therefore representing that learners often downloaded the videos to view later as per their convenience. 
+The above graph is a scatter of plot for North America view % to step position with respect to total downloads. The graph can be used to understand at what position, the learner considered downloading. 
+Here, we could see the most downloads are at the start, therefore, representing that learners often downloaded the videos to view later as per their convenience. 
 
 
 ```{r echo=FALSE}
 asia_hd
 ```
 
-From the graph we can observe that number of people watching in high definition are very low in numbers.
+From the graph, we can observe that number of people watching in high definition are very low in numbers.
 
 ```{r echo=FALSE}
 decline_view
 ```
 
-From the above plot we can infer that number of views are declined as the viewers move forward in the course, with 1st video watched as the most number of times and the last videos from chapter 3 watched least number of times. This indicates a decline in interest experienced by the students.
+From the above plot, we can infer that number of views are declined as the viewers move forward in the course, with 1st video watched as the most number of times and the last videos from chapter 3 watched the least number of times. This indicates a decline in interest experienced by the students.
 
 
 ```{r echo=FALSE}
@@ -234,7 +234,7 @@ The percentage of people who scored "incorrect"
 ## Conclusion Enrollments Data
 
 From the patterns emerging from the plots, we can easily conclude that there is a significant necessity to improve the practical nature of the university courses because the people between the ages 26-35 and the people with university degrees have the highest enrollments in these courses. 
-In terms of employment, the need to up-skill oneself is the latest and growing need, thereby paving the way for the applied programs both at University levels and MOOCs. Furthermore for this course based on the data we can more orient the course for the Asian population which holds a significant future growth area.
+In terms of employment, the need to up-skill oneself is the latest and growing need, thereby paving the way for the applied programs both at University levels and MOOCs. Furthermore, based on the country map we can more orient the course for the Asian population which holds a significant future growth area.
 
 
 I look forward to discussing this report in the Presentation.
