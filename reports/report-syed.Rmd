@@ -65,6 +65,7 @@ In the below plot we are identifying the enrollments based on the gender.
 gender_plot
 ```
 From the graph we can observe that the number of "Males students" enrolled in the course are comparatively more than the "females".
+
 \newpage
 
 #### Plot - Country \

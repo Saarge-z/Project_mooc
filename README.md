@@ -29,4 +29,14 @@ Once that's done, you can execute any code you'd like.
 
 *To generate pdf report you have to open report-syed.Rmd file from the report folder in r studio and preferably after running the above commands you can press a blue button called as 'knit' in the top bar section of the file display pane in rstudio.*
 
+
+# Folder Structure
+
+* Pre-procesing script are in 'munge' folder.
+* Data analysis scripts are in 'src' folder.
+* Pdf report is completed through r mark down both of these files are in 'reports' folder.
+* Datasets used are inside the 'data' folder in .csv files.
+* Graphs are saved inside 'graphs' folder.
+* To manage global settings global.cdf file is in 'config' folder.
+
 For more details about ProjectTemplate, see http://projecttemplate.net
