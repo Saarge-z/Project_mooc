@@ -15,15 +15,15 @@ country_plot = ggplot(df_clean, aes(x = factor(country))) +
   scale_x_discrete(guide = guide_axis(n.dodge = 10))
 country_plot
 
-
+# Creating a country map 
 world <- ne_countries(scale = "medium", returnclass = "sf")
-
+# finding the unique countries of enrollments
 my_countries <- c(unique(df_clean$country))
-
+# Modifying  ppre-loaded data as true, for enrollments countries 
 world_modified <- world %>% 
   mutate(my_selection = ifelse(postal %in% my_countries,
                                1, NA))
-
+# Displaying the map with the enrolled students countries
 country_map = ggplot(data = world_modified) +
   ggtitle("World map") +
   geom_sf(aes(fill=my_selection)) +
@@ -70,6 +70,7 @@ edu_plot = ggplot(df_clean, aes(x = factor(highest_education_level))) +
   geom_bar(stat = "count", width = 0.7, fill = "steelblue") + theme_minimal() + 
   scale_x_discrete(guide = guide_axis(n.dodge = 2))
 edu_plot
+
 
 
 # -----------------------------------------------------------------

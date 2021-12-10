@@ -3,7 +3,6 @@ output: pdf_document
 title: "CSC 8631 - EDA Report"
 author: "Syed Mohib Raza || Student ID: 200740241"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
-
 ---
 
 ```{r setup, include=FALSE}
@@ -21,29 +20,34 @@ source("src/eda.R")
 
 This document provides an analysis of massive open online certificate (MOOC) learning data through Newcastle University. And along with it shows the benefits of reproducible data science using r markdown. The data set contains 52 .csv files, of which three files have been used for performing analysis. The analysis performed is a freehand analysis of the data set with the liberty to generate our own questions and find their answers.
 
-*keywords*: MOOC data set, Data Analysis, reproduciblity
+*keywords*: MOOC data set, Exploratory Data Analysis (EDA)
 
 ## Introduction
 
 With the advent of the internet, online education adoption has been a much debatable area but nevertheless, it has been rising. The world is now more connected than ever and online education is enabling thousands of individuals who aspire to study world-class education and all that at the comfort of their homes with flexible times. Thus virtually removing the barriers of inaccessible education and promoting free and fair resource sharing.
 
-Due to the unfortunate impact of the covid-19 pandemic in 2020, there has been a significant increase in the use of online education platforms also called massive open online certificates or MOOCs. The dataset contains of 52 .csv files, of which 3 files have been chosen for performing data analysis and the results are presented in this report.
+Due to the unfortunate impact of the covid-19 pandemic in 2020, there has been a significant increase in the use of online education platforms also called massive open online certificates or MOOCs. The dataset contains of 52 .csv files, of which 3 files have been chosen which have more number of features than others and can be used to performing data analysis for business understanding. The analysis & results are presented after the data set details section.
 
-## Data Set information 
+## Data Exploration and Preparation
 
-The first data set comprises of enrollment information, had several unknown values and had to be cleaned to generate a clean sample from a population.
-Below is the overview of the enrollment data.
+The first data set comprises of enrollment information, had several unknown values and had to be cleaned to generate a clean sample. All the data uses ETS that is Extract, Transform and Load to perform EDA. Enrollment data set has 13 columns listed below.
 
-```{r Dataset1, echo=FALSE}
-head(df_clean)
+```{r echo=FALSE}
+head(enrol)
 ```
 
-This data set contains data for the video statistics. It can be useful to get deep insight on how the enrolled students are utilizing the online courses.
+The second data set contains data for the video statistics. It can be useful to get deep insight on how the enrolled students are utilizing the online courses.
+Details below are about some of the columns used in the analysis.
+
+1. step_position - Course is divided into 3 main sections and each of them has some sub sections, these divisions are called as step position.
+2. total_transcript_views - Total number of students that used transcripts to understand the course.
+3. total_downloads - Total videos downloaded by the students.
+4. north_america_view_percentage - Percentage of students that are from North America.
 
 ```{r Dataset2, echo=FALSE}
 colnames(video_stats)
 ```
-The quiz taken by the registered students is the subject of this data collection. The data can be used to examine the performance of the students taking the course, and the feedback collected can be used to improve the process.
+The quiz taken by the registered students is the subject of the third data collection. The data can be used to examine the performance of the students taking the course, and the feedback collected can be used to improve the process.
 
 ```{r Dataset3, echo=FALSE}
 head(ques_resp)
@@ -84,7 +88,7 @@ From the plot we can also analyze the trends among various age groups.
 enrol_age
 ```
 Plot shows us that the highest number of enrollments have been from youth which are from the age group of 26 - 35. This age group is mostly out of college &  typically requires a lot of skill development for filling up proper job skills. Males (15.7%) are the highest enrollments for this age group which may imply greater need of skill development because of much more competition.
-However, it is exciting to see middle age ranging from 36-45 (9.8%) & 46-55 (9.9%) in significant numbers with male to female ratio (1.3% & 1.2% for respective age ranges) relatively same as compared to age range 26-35(1.5).
+However, it is exciting to see middle age ranging from 36-45 (9.8%) & 46-55 (9.9%) in significant numbers with male to female ratio (1.3% & 1.2% for respective age ranges) relatively same as compared to age range 26-35(1.5%).
 
 \newpage
 
@@ -99,6 +103,13 @@ From the above plot we can observe that the full time working population have be
 They can obtain new & desired professional skills while being employed full time, as it helps to fund their education thereby maximizing their results.
 
 
+#### Education plot  \
+
+```{r echo=FALSE}
+edu_plot
+```
+The plot indicates that the students with the University degree have the highest enrollments count which in turn is a sign of the need to improve the quality and practicality of education at the university level. This is further proved by the second-highest enrollments count which is also from students who have completed their Masters from a University.  
+
 
 \newpage
 ## Dataset 2
@@ -106,7 +117,7 @@ They can obtain new & desired professional skills while being employed full time
 
 #### Box Plot - Videowatch time \
 
-The below boxplot represents the statistical summary for the video watch time for students in North America. 
+The below box plot represents the statistical summary for the video watch time for students in North America. 
 from above graph we can infer that the median is about 11.43, mean about 11.45. The above statistics can also be obtained via `summary` function like below. 
 
 ```{r echo=FALSE}
@@ -117,18 +128,22 @@ North America views percentage summary
 ```{r echo=FALSE}
 summary(video_stats$north_america_views_percentage)
 ```
+
 Asia views percentage summary
 ```{r echo=FALSE}
 summary(video_stats$asia_views_percentage)
 ```
+
 Europe views percentage summary
 ```{r echo=FALSE}
 summary(video_stats$europe_views_percentage)
 ```
+
 Oceania view percentage summary
 ```{r echo=FALSE}
 summary(video_stats$oceania_views_percentage)
 ```
+
 The boxplot presents the statistical five number summary information visually and is a better alternative to quickly identify the mean value and dispersion in data, through above summary we can observe precise numerical values of each of the statistical perimeters used in box plot for the respective countries.
 We can observe that europe has the highest view percentage out of all the options in our data set. Indicating the course strength in the eyes of European population.
 
@@ -139,11 +154,13 @@ The plot is a transcript views vs asian view percentage graph with respect to st
 ```{r echo=FALSE}
 asia_transcript
 ```
+
 Non native-english speakers has higher usage of transcripts, as evident from graph, with increase in views, there is increase in the usage of transcript 
 
 ```{r echo=FALSE}
 view_download
 ```
+
 The above graph is a scatter of plot for north America view % to step position with respect to total downloads. The graph can be used to understand at what position, the learner considered downloading. 
 Here, we could see the most downloads are at the start therefore representing that learners often downloaded the videos to view later as per their convenience. 
 
@@ -151,11 +168,13 @@ Here, we could see the most downloads are at the start therefore representing th
 ```{r echo=FALSE}
 asia_hd
 ```
+
 From the graph we can observe that number of people watching in high definition are very low in numbers.
 
 ```{r echo=FALSE}
 decline_view
 ```
+
 From the above plot we can infer that number of views are declined as the viewers move forward in the course, with 1st video watched as the most number of times and the last videos from chapter 3 watched least number of times. This indicates a decline in interest experienced by the students.
 
 
@@ -211,11 +230,15 @@ false_percent
 The percentage of people who scored "incorrect"
 
 
+## Conclusion Enrollments Data
+
+From the patterns emerging from the plots, we can easily conclude that there is a significant necessity to improve the practical nature of the university courses because the people between the ages 26-35 and the people with university degrees have the highest enrollments in these courses. 
+In terms of employment, the need to up-skill oneself is the latest and growing need, thereby paving the way for the applied programs both at University levels and MOOCs. Furthermore for this course based on the data we can more orient the course for the Asian population which holds a significant future growth area.
+
 
 I look forward to discussing this report in the Presentation.
 
-
-## Notes: 
+## Note: 
 
 From a large Data set, a single data set is collected from each category i.e 
 1) Enrollment Data Set 
